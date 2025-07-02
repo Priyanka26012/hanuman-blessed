@@ -514,7 +514,7 @@ export default function HanumanBlessed() {
                 {
                   title: "English",
                   content:
-                    "We are building this movement through the unique participation of Hindus — aiming to make every Hindu home in India a Lal Hanuman blessed home. For every murti purchased, a tree will be planted, connecting devotion with environmental responsibility.",
+                    "We are building this movement through the unique participation of Hindus, with the vision of making every Hindu home in India a Lal Hanuman Blessed Home. Our ultimate goal is to create happy, hurdle free homes across the nation.",
                   stats:
                     "1 Hanuman blessed home = 1 Plant in India\n26 Crore Hindu homes = 26 Crore plants in India",
                   delay: "0.3s",
@@ -522,7 +522,7 @@ export default function HanumanBlessed() {
                 {
                   title: "हिंदी",
                   content:
-                    "हम एक ऐसा आंदोलन खड़ा कर रहे हैं, जिसमें हर हिंदू की भागीदारी से भारत का हर हिंदू घर लाल हनुमान जी के आशीर्वाद से पवित्र हो। हर एक मूर्ति के साथ एक वृक्ष लगाया जाएगा — ताकि भक्ति और पर्यावरण की रक्षा एक साथ हो, और सनातन संस्कृति के साथ प्रकृति भी पुष्ट-पल्लवित हो।",
+                    "यह आंदोलन हम हिंदुओं की अनूठी भागीदारी से बना रहे हैं, इस दृष्टि के साथ कि भारत का हर हिंदू घर एक लाल हनुमान ब्लेस्ड होम बने। हमारा अंतिम लक्ष्य है — पूरे देश में खुशहाल और बाधा-रहित घरों का निर्माण करना।",
                   stats:
                     "|| जहाँ सनातन संस्कृति मजबूत होगी, वहाँ प्रकृति भी खुशहाल होगी ||",
                   delay: "0.6s",
@@ -1148,7 +1148,7 @@ export default function HanumanBlessed() {
               <Separator />
 
               <div className="space-y-4">
-                <div className="bg-green-50 p-4 rounded-lg">
+                {/* <div className="bg-green-50 p-4 rounded-lg">
                   <div className="flex items-center space-x-2 mb-2">
                     <Leaf className="w-5 h-5 text-green-600" />
                     <span className="font-medium text-green-800">
@@ -1179,7 +1179,7 @@ export default function HanumanBlessed() {
                     </a>{" "}
                     — supporting sacred causes and community welfare.
                   </p>
-                </div>
+                </div> */}
 
                 {/* Order Summary */}
                 <div className="bg-red-50 p-4 rounded-lg border border-red-200">
@@ -1321,7 +1321,7 @@ export default function HanumanBlessed() {
                 Our Mission
               </h4>
               <div className="space-y-3 text-gray-400">
-                <div className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-300 group/item">
+                {/* <div className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-300 group/item">
                   <p className="group-hover/item:text-green-400 transition-colors duration-300">
                     1 Hanuman blessed home = 1 Plant in India
                   </p>
@@ -1330,7 +1330,7 @@ export default function HanumanBlessed() {
                   <p className="group-hover/item:text-green-400 transition-colors duration-300">
                     26 Crore Hindu homes = 26 Crore plants
                   </p>
-                </div>
+                </div> */}
                 <div className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-300 group/item">
                   <p className="group-hover/item:text-blue-400 transition-colors duration-300">
                     All earnings donated to{" "}
@@ -1344,9 +1344,9 @@ export default function HanumanBlessed() {
                     </a>
                   </p>
                 </div>
-                <div className="text-center text-yellow-400 font-medium animate-pulse">
+                {/* <div className="text-center text-yellow-400 font-medium animate-pulse">
                   🌱 Growing Together 🌱
-                </div>
+                </div> */}
               </div>
             </div>
 
