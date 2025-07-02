@@ -730,12 +730,35 @@ export default function HanumanBlessed() {
       {/* Product Detail Modal */}
       <div  className={`bg-black/20 flex justify-center items-center fixed inset-0 z-50 ${isProductModalOpen ? 'block' : 'hidden'}`}>
         <div className="bg-white p-10  max-md:p-5 rounded-lg w-[90vw] max-w-4xl max-h-[90vh] overflow-y-auto relative">
+          {/* Loading Overlay */}
+          {isSubmitting && (
+            <div className="absolute inset-0 bg-white/90 backdrop-blur-sm flex items-center justify-center z-20 rounded-lg">
+              <div className="text-center space-y-4">
+                <Loader2 className="w-12 h-12 text-red-600 animate-spin mx-auto" />
+                <div className="space-y-2">
+                  <p className="text-lg font-semibold text-gray-800">Processing Your Order</p>
+                  <p className="text-sm text-gray-600">Please wait while we confirm your details...</p>
+                  <div className="flex items-center justify-center space-x-1">
+                    <div className="w-2 h-2 bg-red-600 rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-red-600 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+                    <div className="w-2 h-2 bg-red-600 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Close Button */}
           <button
             onClick={() => setIsProductModalOpen(false)}
-            className="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors duration-200 z-10"
+            disabled={isSubmitting}
+            className={`absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-200 z-10 ${
+              isSubmitting 
+                ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
+                : 'bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-800'
+            }`}
           >
-            <X className="w-5 h-5 text-gray-600 hover:text-gray-800" />
+            <X className="w-5 h-5" />
           </button>
           
           <div className="space-y-1 flex flex-col items-start p-2">
@@ -810,10 +833,13 @@ export default function HanumanBlessed() {
                 <div className="grid grid-cols-2 gap-4">
                   <button
                     onClick={() => setPaymentMethod("online")}
+                    disabled={isSubmitting}
                     className={`p-4 border-2 cursor-pointer rounded-lg transition-all duration-300 ${
-                      paymentMethod === "online"
-                        ? "border-red-500 bg-red-50"
-                        : "border-gray-200 hover:border-red-300"
+                      isSubmitting 
+                        ? 'border-gray-200 bg-gray-100 cursor-not-allowed opacity-50'
+                        : paymentMethod === "online"
+                          ? "border-red-500 bg-red-50"
+                          : "border-gray-200 hover:border-red-300"
                     }`}
                   >
                     <div className="text-center">
@@ -830,10 +856,13 @@ export default function HanumanBlessed() {
                   </button>
                   <button
                     onClick={() => setPaymentMethod("cod")}
+                    disabled={isSubmitting}
                     className={`p-4 border-2 cursor-pointer rounded-lg transition-all duration-300 ${
-                      paymentMethod === "cod"
-                        ? "border-red-500 bg-red-50"
-                        : "border-gray-200 hover:border-red-300"
+                      isSubmitting 
+                        ? 'border-gray-200 bg-gray-100 cursor-not-allowed opacity-50'
+                        : paymentMethod === "cod"
+                          ? "border-red-500 bg-red-50"
+                          : "border-gray-200 hover:border-red-300"
                     }`}
                   >
                     <div className="text-center">
@@ -908,10 +937,13 @@ export default function HanumanBlessed() {
                           setFormErrors({ ...formErrors, name: "" });
                         }
                       }}
+                      disabled={isSubmitting}
                       className={`w-full px-3 py-2 border rounded-lg focus:outline-none transition-colors ${
-                        formErrors.name 
-                          ? 'border-red-500 focus:border-red-500' 
-                          : 'border-gray-300 focus:border-red-500'
+                        isSubmitting 
+                          ? 'bg-gray-100 text-gray-500 cursor-not-allowed border-gray-200' 
+                          : formErrors.name 
+                            ? 'border-red-500 focus:border-red-500 bg-white' 
+                            : 'border-gray-300 focus:border-red-500 bg-white'
                       }`}
                       placeholder="Enter your full name"
                       required
@@ -936,10 +968,13 @@ export default function HanumanBlessed() {
                           setFormErrors({ ...formErrors, phone: "" });
                         }
                       }}
+                      disabled={isSubmitting}
                       className={`w-full px-3 py-2 border rounded-lg focus:outline-none transition-colors ${
-                        formErrors.phone 
-                          ? 'border-red-500 focus:border-red-500' 
-                          : 'border-gray-300 focus:border-red-500'
+                        isSubmitting 
+                          ? 'bg-gray-100 text-gray-500 cursor-not-allowed border-gray-200' 
+                          : formErrors.phone 
+                            ? 'border-red-500 focus:border-red-500 bg-white' 
+                            : 'border-gray-300 focus:border-red-500 bg-white'
                       }`}
                       placeholder="Enter 10-digit mobile number"
                       required
@@ -964,10 +999,13 @@ export default function HanumanBlessed() {
                           setFormErrors({ ...formErrors, email: "" });
                         }
                       }}
+                      disabled={isSubmitting}
                       className={`w-full px-3 py-2 border rounded-lg focus:outline-none transition-colors ${
-                        formErrors.email 
-                          ? 'border-red-500 focus:border-red-500' 
-                          : 'border-gray-300 focus:border-red-500'
+                        isSubmitting 
+                          ? 'bg-gray-100 text-gray-500 cursor-not-allowed border-gray-200' 
+                          : formErrors.email 
+                            ? 'border-red-500 focus:border-red-500 bg-white' 
+                            : 'border-gray-300 focus:border-red-500 bg-white'
                       }`}
                       placeholder="Enter email address"
                       required
@@ -991,10 +1029,13 @@ export default function HanumanBlessed() {
                           setFormErrors({ ...formErrors, address: "" });
                         }
                       }}
+                      disabled={isSubmitting}
                       className={`w-full px-3 py-2 border rounded-lg focus:outline-none transition-colors ${
-                        formErrors.address 
-                          ? 'border-red-500 focus:border-red-500' 
-                          : 'border-gray-300 focus:border-red-500'
+                        isSubmitting 
+                          ? 'bg-gray-100 text-gray-500 cursor-not-allowed border-gray-200' 
+                          : formErrors.address 
+                            ? 'border-red-500 focus:border-red-500 bg-white' 
+                            : 'border-gray-300 focus:border-red-500 bg-white'
                       }`}
                       placeholder="Enter complete address"
                       rows={3}
@@ -1020,10 +1061,13 @@ export default function HanumanBlessed() {
                           setFormErrors({ ...formErrors, city: "" });
                         }
                       }}
+                      disabled={isSubmitting}
                       className={`w-full px-3 py-2 border rounded-lg focus:outline-none transition-colors ${
-                        formErrors.city 
-                          ? 'border-red-500 focus:border-red-500' 
-                          : 'border-gray-300 focus:border-red-500'
+                        isSubmitting 
+                          ? 'bg-gray-100 text-gray-500 cursor-not-allowed border-gray-200' 
+                          : formErrors.city 
+                            ? 'border-red-500 focus:border-red-500 bg-white' 
+                            : 'border-gray-300 focus:border-red-500 bg-white'
                       }`}
                       placeholder="Enter city"
                       required
@@ -1048,10 +1092,13 @@ export default function HanumanBlessed() {
                           setFormErrors({ ...formErrors, state: "" });
                         }
                       }}
+                      disabled={isSubmitting}
                       className={`w-full px-3 py-2 border rounded-lg focus:outline-none transition-colors ${
-                        formErrors.state 
-                          ? 'border-red-500 focus:border-red-500' 
-                          : 'border-gray-300 focus:border-red-500'
+                        isSubmitting 
+                          ? 'bg-gray-100 text-gray-500 cursor-not-allowed border-gray-200' 
+                          : formErrors.state 
+                            ? 'border-red-500 focus:border-red-500 bg-white' 
+                            : 'border-gray-300 focus:border-red-500 bg-white'
                       }`}
                       placeholder="Enter state"
                       required
@@ -1076,10 +1123,13 @@ export default function HanumanBlessed() {
                           setFormErrors({ ...formErrors, pincode: "" });
                         }
                       }}
+                      disabled={isSubmitting}
                       className={`w-full px-3 py-2 border rounded-lg focus:outline-none transition-colors ${
-                        formErrors.pincode 
-                          ? 'border-red-500 focus:border-red-500' 
-                          : 'border-gray-300 focus:border-red-500'
+                        isSubmitting 
+                          ? 'bg-gray-100 text-gray-500 cursor-not-allowed border-gray-200' 
+                          : formErrors.pincode 
+                            ? 'border-red-500 focus:border-red-500 bg-white' 
+                            : 'border-gray-300 focus:border-red-500 bg-white'
                       }`}
                       placeholder="Enter 6-digit PIN code"
                       maxLength={6}
