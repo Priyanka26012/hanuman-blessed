@@ -332,13 +332,13 @@ export default function HanumanBlessed() {
                 </Badge>
                 <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   <span className="inline-block animate-fade-in-up">
-                    Awaken the Divine Power of
+                    Make your home
                   </span>
                   <span
                     className="text-red-600 block animate-fade-in-up"
                     style={{ animationDelay: "0.3s" }}
                   >
-                    Lal Hanuman
+                    Lal Hanuman blessed home
                   </span>
                 </h1>
                 <p
