@@ -356,12 +356,6 @@ export default function HanumanBlessed() {
                 style={{ animationDelay: "0.9s" }}
               >
                 <div className="flex items-center space-x-2 group">
-                  <TreePine className="w-5 h-5 text-green-600 group-hover:animate-bounce" />
-                  <span className="text-sm font-medium text-gray-700">
-                    1 Murti = 1 Tree Planted
-                  </span>
-                </div>
-                <div className="flex items-center space-x-2 group">
                   <Users className="w-5 h-5 text-red-600 group-hover:animate-pulse" />
                   <span className="text-sm font-medium text-gray-700">
                     1.13B Hindus Movement
@@ -556,7 +550,7 @@ export default function HanumanBlessed() {
 
             {/* Animated Counter Section */}
             <div
-              className={`grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 transition-all duration-1000 delay-500 ${
+              className={`flex justify-center items-center gap-10 flex-wrap  transition-all duration-1000 delay-500 ${
                 isVisible("vision")
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
@@ -574,12 +568,6 @@ export default function HanumanBlessed() {
                   label: "Target Homes",
                   icon: Heart,
                   color: "text-red-500",
-                },
-                {
-                  number: "26Cr",
-                  label: "Trees to Plant",
-                  icon: TreePine,
-                  color: "text-green-600",
                 },
                 {
                   number: "1",
@@ -640,7 +628,7 @@ export default function HanumanBlessed() {
               <CardContent className="p-8">
                 <div className="grid lg:grid-cols-2 gap-8 items-center">
                   <div className="space-y-6">
-                    <div className="flex items-center space-x-2">
+                    {/* <div className="flex items-center space-x-2">
                       <div className="flex space-x-1">
                         {[...Array(5)].map((_, i) => (
                           <Star
@@ -652,7 +640,7 @@ export default function HanumanBlessed() {
                       <span className="text-sm text-gray-600">
                         (108 blessed reviews)
                       </span>
-                    </div>
+                    </div> */}
 
                     <h3 className="text-2xl font-bold text-gray-900 group-hover:text-red-600 transition-colors duration-300">
                       Sacred Lal Hanuman Murti
@@ -705,7 +693,7 @@ export default function HanumanBlessed() {
                       className="bg-red-600 hover:bg-red-700 text-white w-full group-hover:scale-105 transition-all duration-300 group/btn"
                     >
                       <ShoppingCart className="w-5 h-5 mr-2 group-hover/btn:animate-bounce" />
-                      Buy Now & Plant a Tree
+                      Buy Now
                     </Button>
                   </div>
                   <div className="space-y-4">
@@ -783,7 +771,7 @@ export default function HanumanBlessed() {
             </div>
 
             <div className="space-y-6">
-              <div className="flex items-center space-x-2">
+              {/* <div className="flex items-center space-x-2">
                 <div className="flex space-x-1">
                   {[...Array(5)].map((_, i) => (
                     <Star
@@ -795,7 +783,7 @@ export default function HanumanBlessed() {
                 <span className="text-sm text-gray-600">
                   (108 blessed reviews)
                 </span>
-              </div>
+              </div> */}
 
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-gray-900">
@@ -902,10 +890,10 @@ export default function HanumanBlessed() {
                       <span className="font-medium text-orange-600">₹40</span>
                     </div>
                   )}
-                  <div className="flex justify-between">
+                  {/* <div className="flex justify-between">
                     <span className="text-gray-600">Environmental Impact</span>
                     <span className="font-medium text-green-600">1 Tree 🌱</span>
-                  </div>
+                  </div> */}
                   <Separator />
                   <div className="flex justify-between text-lg font-bold">
                     <span>Total Amount</span>
@@ -1316,10 +1304,10 @@ export default function HanumanBlessed() {
 
             {/* Mission Section */}
             <div className="space-y-6 group">
-              <h4 className="text-xl font-semibold group-hover:text-red-400 transition-colors duration-300 flex items-center">
+              {/* <h4 className="text-xl font-semibold group-hover:text-red-400 transition-colors duration-300 flex items-center">
                 <TreePine className="w-5 h-5 mr-2 group-hover:animate-bounce" />
                 Our Mission
-              </h4>
+              </h4> */}
               <div className="space-y-3 text-gray-400">
                 {/* <div className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-300 group/item">
                   <p className="group-hover/item:text-green-400 transition-colors duration-300">

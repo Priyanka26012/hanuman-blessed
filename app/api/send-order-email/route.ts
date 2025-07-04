@@ -111,10 +111,6 @@ export async function POST(request: NextRequest) {
                   <span class="price-value">₹${productDetails.codCharges}</span>
                 </div>
                 ` : ''}
-                <div class="price-row">
-                  <span class="price-label">Environmental Contribution:</span>
-                  <span class="price-value" style="color: #28a745;">1 Tree Plantation</span>
-                </div>
                 <div class="price-row total-row">
                   <span class="price-label">Total Amount:</span>
                   <span class="price-value">₹${totalAmount}</span>
@@ -220,8 +216,6 @@ export async function POST(request: NextRequest) {
                 <div class="detail-row"><span class="label">Product:</span> <span class="value">${productDetails.name}</span></div>
                 <div class="detail-row"><span class="label">Price:</span> <span class="value">₹${productDetails.price}</span></div>
                 ${paymentMethod === 'cod' ? `<div class="detail-row"><span class="label">COD Charges:</span> <span class="value">₹${productDetails.codCharges}</span></div>` : ''}
-                <div class="detail-row"><span class="label">Shipping:</span> <span class="value">FREE</span></div>
-                <div class="detail-row"><span class="label">Environmental Impact:</span> <span class="value">1 Tree to be planted</span></div>
               </div>
             </div>
 
